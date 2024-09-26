@@ -5,7 +5,7 @@ export function trackConversationGuideToCPaymentClick() {
 }
 
 export function trackAuthorizationPageButtonToCPaymentClick() {
-  sendGAEvent("event", "AuthorizationPageButtonToCPaymentClick", { value: 1 });
+  sendGAEvent("event", "FuckAuthorizationPageButtonToCPaymentClick", { value: 1 });
 }
 
 export function trackAuthorizationPageBannerToCPaymentClick() {

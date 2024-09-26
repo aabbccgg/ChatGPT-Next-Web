@@ -29,7 +29,7 @@ export function AuthPage() {
   const goChat = () => navigate(Path.Chat);
   const goSaas = () => {
     trackAuthorizationPageButtonToCPaymentClick();
-    window.location.href = SAAS_CHAT_URL;
+    window.location.href = window.location.href;
   };
 
   const resetAccessCode = () => {
@@ -115,12 +115,12 @@ export function AuthPage() {
           type="primary"
           onClick={goChat}
         />
-        <IconButton
+        {/*<IconButton
           text={Locale.Auth.SaasTips}
           onClick={() => {
             goSaas();
           }}
-        />
+        />*/}
       </div>
     </div>
   );
