@@ -688,7 +688,7 @@ export function Settings() {
     </ListItem>
   );
 
-  const saasStartComponent = (
+  let saasStartComponent = (
     <ListItem
       className={styles["subtitle-button"]}
       title={
@@ -712,6 +712,7 @@ export function Settings() {
       />
     </ListItem>
   );
+  saasStartComponent = undefined
 
   const useCustomConfigComponent = // Conditionally render the following ListItem based on clientConfig.isApp
     !clientConfig?.isApp && ( // only show if isApp is false
