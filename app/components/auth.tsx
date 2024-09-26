@@ -127,6 +127,7 @@ export function AuthPage() {
 }
 
 function TopBanner() {
+  return 1
   const [isHovered, setIsHovered] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const isMobile = useMobileScreen();
