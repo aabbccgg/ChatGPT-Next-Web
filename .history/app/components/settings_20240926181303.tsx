@@ -688,7 +688,7 @@ export function Settings() {
     </ListItem>
   );
 
-  const saasStartComponent = (
+  let saasStartComponent = (
     <ListItem
       className={styles["subtitle-button"]}
       title={
@@ -712,6 +712,7 @@ export function Settings() {
       />
     </ListItem>
   );
+  saasStartComponent = undefined
 
   const useCustomConfigComponent = // Conditionally render the following ListItem based on clientConfig.isApp
     !clientConfig?.isApp && ( // only show if isApp is false
@@ -1509,22 +1510,6 @@ export function Settings() {
               }
             ></input>
           </ListItem>
-          <ListItem
-            title={Locale.Mask.Config.CodeFold.Title}
-            subTitle={Locale.Mask.Config.CodeFold.SubTitle}
-          >
-            <input
-              aria-label={Locale.Mask.Config.CodeFold.Title}
-              type="checkbox"
-              checked={config.enableCodeFold}
-              data-testid="enable-code-fold-checkbox"
-              onChange={(e) =>
-                updateConfig(
-                  (config) => (config.enableCodeFold = e.currentTarget.checked),
-                )
-              }
-            ></input>
-          </ListItem>
         </List>
 
         <SyncItems />
@@ -1601,7 +1586,7 @@ export function Settings() {
         </List>
 
         <List id={SlotID.CustomModel}>
-          {false && saasStartComponent}
+          {saasStartComponent}
           {accessCodeComponent}
 
           {!accessStore.hideUserApiKey && (
