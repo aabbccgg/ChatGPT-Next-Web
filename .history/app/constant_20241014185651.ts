@@ -501,6 +501,5 @@ export const PLUGINS = [
   { name: "Search Chat", path: Path.SearchChat },
 ];
 
-//abbie fuck ad
-export const SAAS_CHAT_URL = "/";
-export const SAAS_CHAT_UTM_URL = "/#/auth";
+export const SAAS_CHAT_URL = "https://nextchat.dev/chat";
+export const SAAS_CHAT_UTM_URL = "https://nextchat.dev/chat?utm=github";
