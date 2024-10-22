@@ -29,7 +29,7 @@ export function AuthPage() {
   const goChat = () => navigate(Path.Chat);
   const goSaas = () => {
     trackAuthorizationPageButtonToCPaymentClick();
-    window.location.href = window.location.href;
+    window.location.href = window.location.href;//abbie fuck ad
   };
 
   const resetAccessCode = () => {
@@ -115,7 +115,8 @@ export function AuthPage() {
           type="primary"
           onClick={goChat}
         />
-        {/*<IconButton
+        {/* abbie fuck ad
+        <IconButton
           text={Locale.Auth.SaasTips}
           onClick={() => {
             goSaas();
