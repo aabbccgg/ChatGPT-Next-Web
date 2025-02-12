@@ -493,6 +493,7 @@ const openaiModels = [
   "dall-e-3",
   "o1-mini",
   "o1-preview",
+  "o1",
   "o3-mini",
 ];
 
