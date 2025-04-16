@@ -453,10 +453,12 @@ export const DEFAULT_TTS_VOICES = [
 export const VISION_MODEL_REGEXES = [
   /vision/,
   /gpt-4o/,
+  /o1/,
   /claude-3/,
   /gemini-1\.5/,
   /gemini-exp/,
   /gemini-2\.0/,
+  /gemini-2\.5/,
   /learnlm/,
   /qwen-vl/,
   /qwen2-vl/,
@@ -490,10 +492,12 @@ const openaiModels = [
   "gpt-4-vision-preview",
   "gpt-4-turbo-2024-04-09",
   "gpt-4-1106-preview",
+  "gpt-4.1-nano",
   "dall-e-3",
   "o1-mini",
   "o1-preview",
   "o1",
+  "o1-pro",
   "o3-mini",
 ];
 
@@ -521,6 +525,7 @@ const googleModels = [
   "gemini-2.0-flash-thinking-exp-01-21",
   "gemini-2.0-pro-exp",
   "gemini-2.0-pro-exp-02-05",
+  "gemini-2.5-pro-exp-03-25",
 ];
 
 const anthropicModels = [
@@ -536,6 +541,7 @@ const anthropicModels = [
   "claude-3-5-sonnet-20240620",
   "claude-3-5-sonnet-20241022",
   "claude-3-5-sonnet-latest",
+  "claude-3-7-sonnet-latest",
 ];
 
 const baiduModels = [
@@ -591,7 +597,7 @@ const iflytekModels = [
   "4.0Ultra",
 ];
 
-const deepseekModels = ["deepseek-chat", "deepseek-coder", "deepseek-reasoner", "deepseek-ai/deepseek-r1"];
+const deepseekModels = ["deepseek-chat", "deepseek-coder", "deepseek-reasoner"];
 
 const xAIModes = [
   "grok-beta",
