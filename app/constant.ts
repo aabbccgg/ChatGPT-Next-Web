@@ -518,7 +518,9 @@ const openaiModels = [
   "o1-preview",
   "o1",
   "o1-pro",
+  "o3",
   "o3-mini",
+  "o4-mini",
 ];
 
 const googleModels = [

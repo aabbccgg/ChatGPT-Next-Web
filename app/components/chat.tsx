@@ -534,6 +534,8 @@ export function ChatActions(props: {
     const filteredModels = allModels.filter((m) => m.available);
     const defaultModel = filteredModels.find((m) => m.isDefault);
 
+    /* abbie Don't put the default model to the top
+    *
     if (defaultModel) {
       const arr = [
         defaultModel,
@@ -543,6 +545,8 @@ export function ChatActions(props: {
     } else {
       return filteredModels;
     }
+    */
+    return filteredModels;
   }, [allModels]);
   const currentModelName = useMemo(() => {
     const model = models.find(
