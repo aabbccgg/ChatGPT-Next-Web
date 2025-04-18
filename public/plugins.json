@@ -5,6 +5,21 @@
     "schema": "https://raw.githubusercontent.com/aabbccgg/ChatGPT-Awesome-Plugins/refs/heads/main/plugins/searxng/openapi.json"
   },
   {
+    "id": "Jina-read",
+    "name": "Jina-read",
+    "schema": "https://raw.githubusercontent.com/aabbccgg/ChatGPT-Awesome-Plugins/refs/heads/main/plugins/jina-r/openapi.json"
+  },
+  {
+    "id": "gapier",
+    "name": "gapier",
+    "schema": "https://raw.githubusercontent.com/aabbccgg/ChatGPT-Awesome-Plugins/refs/heads/main/plugins/gapier/openapi.json"
+  },
+  {
+    "id": "Dall-E",
+    "name": "Dall-E",
+    "schema": "https://raw.githubusercontent.com/aabbccgg/ChatGPT-Awesome-Plugins/refs/heads/main/plugins/dalle/openapi.json"
+  },
+  {
     "id": "WebPilot",
     "name": "WebPilot",
     "schema": "https://raw.githubusercontent.com/aabbccgg/ChatGPT-Awesome-Plugins/refs/heads/main/plugins/webpilot/openapi.yaml"
