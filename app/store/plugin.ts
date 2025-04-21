@@ -49,8 +49,8 @@ export const FunctionToolService = {
       plugin?.authType == "basic"
         ? `Basic ${plugin?.authToken}`
         : plugin?.authType == "bearer"
-        ? `Bearer ${plugin?.authToken}`
-        : plugin?.authToken;
+          ? `Bearer ${plugin?.authToken}`
+          : plugin?.authToken;
     const authLocation = plugin?.authLocation || "header";
     const definition = yaml.load(plugin.content) as any;
     const serverURL = definition?.servers?.[0]?.url;
@@ -78,7 +78,7 @@ export const FunctionToolService = {
     });
     try {
       api.initSync();
-    } catch (e) {}
+    } catch (e) { }
     const operations = api.getOperations();
     return (this.tools[plugin.id] = {
       api,
@@ -235,35 +235,50 @@ export const usePluginStore = createPersistStore(
       if (typeof window === "undefined") {
         return;
       }
-
+      // Abbie always reload buildin plugins
       fetch("./plugins.json")
         .then((res) => res.json())
         .then((res) => {
           Promise.all(
             res.map((item: any) =>
-              // skip get schema
-              state.get(item.id)
-                ? item
-                : fetch(item.schema)
-                    .then((res) => res.text())
-                    .then((content) => ({
-                      ...item,
-                      content,
-                    }))
-                    .catch((e) => item),
+              fetch(item.schema) // 
+                .then((res) => res.text())
+                .then((content) => ({
+                  ...item,
+                  content,
+                }))
+                .catch((e) => item),
             ),
           ).then((builtinPlugins: any) => {
             builtinPlugins
               .filter((item: any) => item?.content)
               .forEach((item: any) => {
-                const plugin = state.create(item);
-                state.updatePlugin(plugin.id, (plugin) => {
-                  const tool = FunctionToolService.add(plugin, true);
-                  plugin.title = tool.api.definition.info.title;
-                  plugin.version = tool.api.definition.info.version;
-                  plugin.builtin = true;
-                });
+                const plugin = state.get(item.id)
+                  ? state.updatePlugin(item.id, (plugin) => {// Update if plugin has added 
+                    const tool = FunctionToolService.add(plugin, true);
+                    plugin.title = tool.api.definition.info.title;
+                    plugin.version = tool.api.definition.info.version;
+                    plugin.builtin = true;
+                  })
+                  : (() => {
+                    state.updatePlugin(state.create(item).id, (plugin) => {// Create the buildin plugin
+                      const tool = FunctionToolService.add(plugin, true);
+                      plugin.title = tool.api.definition.info.title;
+                      plugin.version = tool.api.definition.info.version;
+                      plugin.builtin = true;
+                    });
+                  })();
               });
+            // Del non-exitent plugins
+            const jsonPluginIds = res.map((item: any) => item.id);// Get buildin plugins json id list
+            const currentBuiltinIds = state.getAll()
+              .filter((p) => p.builtin)
+              .map((p) => p.id);
+            currentBuiltinIds.forEach((id) => {
+              if (!jsonPluginIds.includes(id)) {
+                state.delete(id);
+              }
+            });
           });
         });
     },
