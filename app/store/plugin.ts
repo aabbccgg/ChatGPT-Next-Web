@@ -255,6 +255,7 @@ export const usePluginStore = createPersistStore(
               .forEach((item: any) => {
                 const plugin = state.get(item.id)
                   ? state.updatePlugin(item.id, (plugin) => {// Update if plugin has added 
+                    plugin.content = item.content;
                     const tool = FunctionToolService.add(plugin, true);
                     plugin.title = tool.api.definition.info.title;
                     plugin.version = tool.api.definition.info.version;
