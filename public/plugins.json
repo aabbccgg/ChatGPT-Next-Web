@@ -10,11 +10,6 @@
     "schema": "https://raw.githubusercontent.com/aabbccgg/ChatGPT-Awesome-Plugins/refs/heads/main/plugins/jina-r/openapi.json"
   },
   {
-    "id": "WebPilot",
-    "name": "WebPilot",
-    "schema": "https://raw.githubusercontent.com/aabbccgg/ChatGPT-Awesome-Plugins/refs/heads/main/plugins/webpilot/openapi.yaml"
-  },
-  {
     "id": "Tavily",
     "name": "Tavily",
     "schema": "https://raw.githubusercontent.com/aabbccgg/ChatGPT-Awesome-Plugins/refs/heads/main/plugins/tavilysearch/openapi.json"
