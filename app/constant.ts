@@ -459,6 +459,9 @@ export const KnowledgeCutOffDate: Record<string, string> = {
   "gemini-pro-vision": "2023-12",
   "deepseek-chat": "2024-07",
   "deepseek-coder": "2024-07",
+  "gpt-5-nano": "2024-5",
+  "gpt-5-mini": "2024-5",
+  "gpt-5": "2024-10",
 };
 
 export const DEFAULT_TTS_ENGINE = "OpenAI-TTS";
@@ -479,6 +482,7 @@ export const VISION_MODEL_REGEXES = [
   /vision/,
   /gpt-4o/,
   /gpt-4\.1/,
+  /gpt-5/,
   /claude.*[34]/,
   /gemini-1\.5/,
   /gemini-exp/,
@@ -535,6 +539,9 @@ const openaiModels = [
   "o3-mini",
   "o3",
   "o4-mini",
+  "gpt-5-nano",
+  "gpt-5-mini",
+  "gpt-5",
 ];
 
 const googleModels = [
