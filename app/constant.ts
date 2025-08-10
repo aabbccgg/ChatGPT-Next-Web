@@ -420,8 +420,8 @@ You are an AI assistant with access to system tools. Your role is to help users 
    
 `;
 
-export const SUMMARIZE_MODEL = "gpt-4.1-nano";
-export const GEMINI_SUMMARIZE_MODEL = "gemini-2.0-flash";
+export const SUMMARIZE_MODEL = "gpt-5-nano";
+export const GEMINI_SUMMARIZE_MODEL = "gemini-2.5-flash";
 export const DEEPSEEK_SUMMARIZE_MODEL = "deepseek-chat";
 
 export const KnowledgeCutOffDate: Record<string, string> = {
