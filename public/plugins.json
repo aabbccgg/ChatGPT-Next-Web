@@ -1,10 +1,5 @@
 [
   {
-    "id": "Searxng",
-    "name": "Searxng",
-    "schema": "https://raw.githubusercontent.com/aabbccgg/ChatGPT-Awesome-Plugins/refs/heads/main/plugins/searxng/openapi.json"
-  },
-  {
     "id": "Jina-read",
     "name": "Jina-read",
     "schema": "https://raw.githubusercontent.com/aabbccgg/ChatGPT-Awesome-Plugins/refs/heads/main/plugins/jina-r/openapi.json"
